@@ -15,6 +15,16 @@
     <section class="content">
         <div class="container-fluid">
             <div class="card card-primary card-outline">
+                <!-- ... (existing content) ... -->
+                @if(session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+                <!-- ... (existing content) ... -->
                 <!-- /.card-body -->
                 <div class="card-body">
                     <h3 class="box-title"><b>Data Pendaftar</b><br></h3>

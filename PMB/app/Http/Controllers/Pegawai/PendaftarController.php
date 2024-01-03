@@ -50,7 +50,7 @@ class PendaftarController extends Controller
         // $pendaftar->update([
         //     "keterangan"=>$request->get("keterangan")
         // ]);
-        return redirect()->route('pendaftar.index');
+        return redirect()->route('pendaftar.index')->with('success', 'Berhasil Verifikasi Pendaftar');
         // return redirect()
         // ->route('pendaftar.index')
         // ->with('message','Verifikasi Mahasiswa Berhasil');

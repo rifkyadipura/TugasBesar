@@ -28,26 +28,30 @@
                         <div class="row">
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label for="nama">Nama</label>
-                                    <input id="nama" class="form-control" placeholder="{{ $data->name }}" readonly   name="nama"  type="text" data-validation="[NOTEMPTY]" data-validation-message="Kode must not be empty!">
+                                    <label>Nama Lengkap</label>
+                                    <input type="text" class="form-control" name="name" id="name" value="{{ $data->name }}" readonly>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label for="nik">Nik</label>
-                                    <input id="nik" class="form-control" placeholder="{{ $data->nik }}" readonly  name="nik"  type="text" data-validation="[NOTEMPTY]" data-validation-message="Nama must not be empty!">
+                                    <label for="keterangan">Jenis Kelamin *</label>
+                                    <select name="jenis_kelamin" class="form-select" disabled>
+                                        <option>Pilih</option>
+                                        <option value="Laki-laki" {{old('jenis_kelamin',$data->jenis_kelamin)=="Laki-laki"? 'selected':''}}>Laki-laki</option>
+                                        <option value="Perempuan" {{old('jenis_kelamin',$data->jenis_kelamin)=="Perempuan"? 'selected':''}}>Perempuan</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input id="email" class="form-control" placeholder="{{ $data->email }}" readonly  name="email"  type="text" data-validation="[NOTEMPTY]" data-validation-message="Nama must not be empty!">
+                                    <label>NISN</label>
+                                    <input type="number" class="form-control" name="nisn" id="nisn" value="{{ $data->nisn }}" readonly>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label for="no_telp">No Telp</label>
-                                    <input id="no_telp" class="form-control" placeholder="{{ $data->no_telp }}" readonly  name="no_telp"  type="text" data-validation="[NOTEMPTY]" data-validation-message="Nama must not be empty!">
+                                    <label for="nik">NIK</label>
+                                    <input type="number" class="form-control" name="nik" id="nik" value="{{ $data->nik }}" readonly>
                                 </div>
                             </div>
                         </div>
@@ -55,26 +59,72 @@
                         <div class="row">
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label for="jenis_kelamin">Jenis Kelamin</label>
-                                    <input id="jenis_kelamin" class="form-control" placeholder="{{ $data->jenis_kelamin }}" readonly   name="jenis_kelamin"  type="text" data-validation="[NOTEMPTY]" data-validation-message="Kode must not be empty!">
+                                    <label>Lahir</label>
+                                    <input type="date" class="form-control" name="lahir" id="lahir" value="{{ $data->lahir }}" readonly>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label for="lahir">lahir</label>
-                                    <input id="lahir" class="form-control" placeholder="{{ $data->lahir }}" readonly  name="lahir"  type="text" data-validation="[NOTEMPTY]" data-validation-message="Nama must not be empty!">
+                                    <label for="agama">Agama</label>
+                                    <select name="agama" class="form-select" disabled>
+                                        <option>Pilih</option>
+                                        <option value="Islam" {{old('agama',$data->agama)=="Islam"? 'selected':''}}>Islam</option>
+                                        <option value="Kristen" {{old('agama',$data->agama)=="Kristen"? 'selected':''}}>kristen</option>
+                                        <option value="Budha" {{old('agama',$data->agama)=="Budha"? 'selected':''}}>Budha</option>
+                                        <option value="Hindu" {{old('agama',$data->agama)=="Hindu"? 'selected':''}}>Hindu</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <label for="program_studi1">Program Studi </label>
-                                    <input id="program_studi" class="form-control" placeholder="{{ $data->program_studi }}" readonly  name="program_studi"  type="text" data-validation="[NOTEMPTY]" data-validation-message="Nama must not be empty!">
+                                    <label>No Telp</label>
+                                    <input type="number" class="form-control" name="no_telp" id="no_telp" value="{{ $data->no_telp }}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label>Alamat</label>
+                                    <textarea name="alamat" class="form-control" id="alamat" cols="30" rows="10" readonly>{{ $data->alamat }}</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" value="{{ $data->email }}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for="program_studi">Program Studi</label>
+                                    <select name="program_studi" class="form-select" disabled>
+                                        <option>Pilih</option>
+                                        <option value="D4 Teknik Informatika" {{old('program_studi',$data->program_studi)=="D4 Teknik Informatika"? 'selected':''}}>D4 Teknik Informatika</option>
+                                        <option value="D3 Teknik Informatika" {{old('program_studi',$data->program_studi)=="D3 Teknik Informatika"? 'selected':''}}>D3 Teknik Informatika</option>
+                                        <option value="D4 Manajemen Bisnis" {{old('program_studi',$data->program_studi)=="D4 Manajemen Bisnis"? 'selected':''}}>D4 Manajemen Bisnis</option>
+                                        <option value="D3 Manajemen Bisnis" {{old('program_studi',$data->program_studi)=="D3 Manajemen Bisnis"? 'selected':''}}>D3 Manajemen Bisnis</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group">
                                     <label for="jalur_masuk">Jalur Masuk</label>
-                                    <input id="jalur_masuk" class="form-control" placeholder="{{ $data->jalur_masuk }}" readonly  name="jalur_masuk"  type="text" data-validation="[NOTEMPTY]" data-validation-message="Nama must not be empty!">
+                                    <select name="jalur_masuk" class="form-select" disabled>
+                                        <option>Pilih</option>
+                                        <option value="Test" {{old('jalur_masuk',$data->jalur_masuk)=="Test"? 'selected':''}}>Test</option>
+                                        <option value="Undangan" {{old('jalur_masuk',$data->jalur_masuk)=="Undangan"? 'selected':''}}>Undangan</option>
+                                        <option value="Beasiswa" {{old('jalur_masuk',$data->jalur_masuk)=="Beasiswa"? 'selected':''}}>Beasiswa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label for="foto_diri">Pas Foto</label>
+                                    <a href="{{ asset('pas_foto/' . $data->foto_diri) }}" target="_blank" class="d-block">
+                                        <img src="{{ asset('pas_foto/' . $data->foto_diri) }}" class="img-thumbnail img-fluid" style="height: 220px; object-fit: cover" alt="Foto Diri">
+                                    </a>
                                 </div>
                             </div>
                         </div>

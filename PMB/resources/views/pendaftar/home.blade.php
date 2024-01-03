@@ -45,7 +45,7 @@
                         <br><img class="logo-ulbi" src="https://enroll.ulbi.ac.id/mhs/../assets/images//ulbi_logo/logo_wide_ulbi.png" width="220px"></p><br>
                         <h3 class="box-title"><b>DASHBOARD</b><br>PENERIMAAN MAHASISWA BARU</h3>
                         <hr>
-                        <h5>Welcome user</h5>
+                        <h5>Welcome {{ Auth::user()->name }}</h5>
                     </center>
                 </div><!-- /.card-body -->
             </div>

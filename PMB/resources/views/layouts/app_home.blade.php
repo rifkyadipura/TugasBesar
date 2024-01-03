@@ -36,9 +36,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Home</a>
-                </li>
             </ul>
 
             <!-- Right navbar links -->
@@ -75,7 +72,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="#" class="brand-link">
-                <img src="{{ asset('img/logo_pp_ulbi.png') }}" alt="AdminLTE Logo"
+                <img src="{{ asset('img/logo_pp_ulbi.jpg') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Dashboard</span>
             </a>
@@ -84,10 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="{{ asset('gambar/images.jpg') }}" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
+                    <div class="info" style="font-size: 20px;">
                         <a href="#" class="d-block">{{ Auth::user()->name }}</a>
                     </div>
                 </div>
@@ -99,10 +93,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-home"></i>
-                                <p>Home</p>
-                            </a>
+                            @if (Auth::user()->role == 0)
+                                <a href="{{ route('home.pendaftar') }}" class="nav-link">
+                                    <i class="nav-icon fas fa-home"></i>
+                                    <p>Home</p>
+                                </a>
+                            @else
+                                <a href="{{ route('home') }}" class="nav-link">
+                                    <i class="nav-icon fas fa-home"></i>
+                                    <p>Home</p>
+                                </a>
+                            @endif
                         </li>
                         <li class="nav-item has-treeview menu-open">
                             <a href="#" class="nav-link active">
@@ -128,22 +129,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <a href="{{ route('pendaftar.index') }}" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Pendaftar</p>
-                                        </a>
-                                    </li>
-                                @endif
-                                @if (Auth::user()->role == 1)
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Diterima</p>
-                                        </a>
-                                    </li>
-                                @endif
-                                @if (Auth::user()->role == 1)
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Ditolak</p>
                                         </a>
                                     </li>
                                 @endif

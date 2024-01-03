@@ -30,12 +30,32 @@
                     <h3 class="box-title"><b>Data Pendaftar</b><br></h3>
                     <hr>
                     <div class="form-group">
-                        <a href="" class="btn btn-sm btn-info"><span class="fa fa-close"></span> Kembali</a>
-                        @if ($pendaftar && $pendaftar->status == 0)
-                            <a href="{{ route('biodata.create') }}" class="btn btn-sm btn-info"><span class="fa fa-close"></span> Buat Biodata</a>
+                        @if ($pendaftar && $pendaftar->status == 1)
+                            <!-- Display something specific for status 1 or do nothing -->
+                        @else
+                            <a href="{{ route('biodata.create') }}" class="btn btn-success"><span class="fa fa-close"></span> Buat Biodata</a>
                         @endif
+
                     </div>
                     @if ($pendaftar && $pendaftar->status == 1)
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Apa Anda Yakin Untuk Menghapus?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a href="{{ route('biodata.delete', $pendaftar->pendaftar_id) }}" class="btn btn-danger">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- /.row -->
                         <div class="row">
                             <div class="col-12">
@@ -50,12 +70,13 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nama</th>
+                                                    <th>NISN</th>
                                                     <th>NIK</th>
                                                     <th>Jenis Kelamin</th>
                                                     <th>Lahir</th>
                                                     <th>Jalur Masuk</th>
                                                     <th>Program Studi</th>
-                                                    <th>Action</th>
+                                                    <th> <center>Action</center></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -63,13 +84,16 @@
                                                 <tr>
                                                     <td><?= $i ?></td>
                                                     <td>{!! $pendaftar->name !!}</td>
+                                                    <td>{!! $pendaftar->nisn !!}</td>
                                                     <td>{!! $pendaftar->nik !!}</td>
                                                     <td>{!! $pendaftar->jenis_kelamin !!}</td>
                                                     <td>{!! $pendaftar->lahir !!}</td>
                                                     <td>{!! $pendaftar->jalur_masuk !!}</td>
                                                     <td>{!! $pendaftar->program_studi !!}</td>
                                                     <td>
-                                                        <a href="" class="btn btn-success">Edit</a>
+                                                        <a href="{{ route('biodata.show', $pendaftar->pendaftar_id) }}" class="btn btn-warning">Read</a>
+                                                        <a href="{{ route('biodata.edit', $pendaftar->pendaftar_id) }}" class="btn btn-success">Edit</a>
+                                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"> Delete </button>
                                                     </td>
                                                 </tr>
                                                 <?php $i++; ?>
