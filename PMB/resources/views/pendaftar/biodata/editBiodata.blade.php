@@ -107,10 +107,10 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="foto_diri">Pas Foto</label>
-                                        <input type="file" class="form-control" name="foto_diri" id="foto_diri">
-                                        {{-- <a href="{{ asset('pas_foto/' . $pendaftar->foto_diri) }}" target="_blank" class="d-block">
+                                        {{-- <input type="file" class="form-control" name="foto_diri" id="foto_diri" value="{{ $pendaftar->foto_diri }}"> --}}
+                                        <a href="{{ asset('pas_foto/' . $pendaftar->foto_diri) }}" target="_blank" class="d-block">
                                             <img src="{{ asset('pas_foto/' . $pendaftar->foto_diri) }}" class="img-thumbnail img-fluid" style="height: 220px; object-fit: cover" alt="Foto Diri">
-                                        </a> --}}
+                                        </a>
                                     </div>
                                 </div>
                             </div>

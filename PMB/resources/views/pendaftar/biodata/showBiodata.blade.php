@@ -136,6 +136,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="keterangan">Keterangan</label>
+                                    <input type="text" class="form-control" name="keterangan" id="keterangan" value="{{ $pendaftar->keterangan }}" readonly>
+                                </div>
+                            </div>
+                        </div>
                     </div>
             </div>
             <!-- /.card -->
