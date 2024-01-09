@@ -123,6 +123,18 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
+                                    <label for="program_studi2">Program Studi ke 2</label>
+                                    <select name="program_studi2" class="form-select" required>
+                                        <option>Pilih</option>
+                                        <option value="D4 Teknik Informatika">D4 Teknik Informatika</option>
+                                        <option value="D3 Teknik Informatika">D3 Teknik Informatika</option>
+                                        <option value="D4 Manajemen Bisnis">D4 Manajemen Bisnis</option>
+                                        <option value="D3 Manajemen Bisnis">D3 Manajemen Bisnis</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
                                     <label for="jalur_masuk">Jalur Masuk</label>
                                     <select name="jalur_masuk" class="form-select" required>
                                         <option>Pilih</option>

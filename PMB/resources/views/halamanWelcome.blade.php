@@ -98,12 +98,9 @@
     <!-- Navigation -->
     <nav class="bg-blue-500 p-4 text-white">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-xl font-semibold">Your Logo</a>
+            <a href="#" class="text-xl font-semibold">ULBI</a>
             <ul class="flex space-x-4">
-                <li><a href="#" class="hover:underline">Home</a></li>
-                <li><a href="#" class="hover:underline">About</a></li>
-                <li><a href="#" class="hover:underline">Services</a></li>
-                <li><a href="#" class="hover:underline">Contact</a></li>
+                <li><a href="/" class="hover:underline">Home</a></li>
                 @if (Route::has('login'))
                     @auth
                        <li><a href="{{ url('/home') }}" class="hover:underline">Home</a></li>
@@ -123,7 +120,7 @@
     <header>
         <h1 class="text-4xl font-bold mb-4">Welcome to Our University</h1>
         <p class="text-lg mb-8">Explore endless possibilities for your future!</p>
-        <a href="#" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700">Apply Now</a>
+        <a href="https://www.ulbi.ac.id/" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-yellow-700">Apply Now</a>
     </header>
 
     <!-- Content Section -->
@@ -133,7 +130,7 @@
 
         </p>
         <p class="text-gray-700 mb-4"></p>
-        <a href="#" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700">Learn More</a>
+        <a href="https://www.ulbi.ac.id/" class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700">Learn More</a>
     </main>
 
     <!-- Call to Action Section -->
@@ -141,7 +138,7 @@
         <div class="container mx-auto">
             <h2 class="text-3xl font-bold mb-2">Ready to Join Us?</h2>
             <p class="text-lg mb-4">Apply now to start your educational journey with us!</p>
-            <a href="#" class="cta-button">Apply Now</a>
+            <a href="https://www.ulbi.ac.id/" class="cta-button">Apply Now</a>
         </div>
     </section>
 

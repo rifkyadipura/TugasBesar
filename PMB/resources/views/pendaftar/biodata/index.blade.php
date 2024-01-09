@@ -75,7 +75,9 @@
                                                     <th>Jenis Kelamin</th>
                                                     <th>Lahir</th>
                                                     <th>Jalur Masuk</th>
-                                                    <th>Program Studi</th>
+                                                    <th>Program Studi Ke 1</th>
+                                                    <th>Program Studi Ke 2</th>
+                                                    <th>Keterangan</th>
                                                     <th> <center>Action</center></th>
                                                 </tr>
                                             </thead>
@@ -90,6 +92,8 @@
                                                     <td>{!! $pendaftar->lahir !!}</td>
                                                     <td>{!! $pendaftar->jalur_masuk !!}</td>
                                                     <td>{!! $pendaftar->program_studi !!}</td>
+                                                    <td>{!! $pendaftar->program_studi2 !!}</td>
+                                                    <td>{!! $pendaftar->keterangan !!}</td>
                                                     <td>
                                                         <a href="{{ route('biodata.show', $pendaftar->pendaftar_id) }}" class="btn btn-warning">Read</a>
                                                         <a href="{{ route('biodata.edit', $pendaftar->pendaftar_id) }}" class="btn btn-success">Edit</a>

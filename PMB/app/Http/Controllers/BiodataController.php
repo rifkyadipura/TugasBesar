@@ -71,6 +71,7 @@ class BiodataController extends Controller
         $pendaftar->no_telp = $request->get('no_telp');
         $pendaftar->email = $request->get('email');
         $pendaftar->program_studi = $request->get('program_studi');
+        $pendaftar->program_studi2 = $request->get('program_studi2');
         $pendaftar->jalur_masuk = $request->get('jalur_masuk');
         $pendaftar->foto_diri = $request->get('foto_diri');
         $pendaftar->keterangan="Belum Dilihat";
